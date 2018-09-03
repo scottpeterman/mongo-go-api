@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/gorilla/mux"
-	"github.com/mycodesmells/mongo-go-api/db"
+	"github.com/scottpeterman/mongo-go-api/db"
 	"strconv"
 )
 

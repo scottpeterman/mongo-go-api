@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/mycodesmells/mongo-go-api/api"
+	"github.com/scottpeterman/mongo-go-api/api"
 )
 
 func main() {

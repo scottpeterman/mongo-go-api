@@ -5,6 +5,7 @@ import (
 
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
+
 )
 
 //Item represents a sample database entity.
@@ -43,7 +44,10 @@ func GetAll() ([]Item, error) {
 func GetOne(id string) (*Item, error) {
 	res := Item{}
 
-	if err := collection().Find(bson.M{"_id": id}).One(&res); err != nil {
+
+	//http://www.blog.labouardy.com/build-restful-api-in-go-and-mongodb/
+	//https://www.mycodesmells.com/post/mongodb-api-with-go-lang
+	if err := collection().FindId(bson.ObjectIdHex(id)).One(&res); err != nil {
 		return nil, err
 	}
 
